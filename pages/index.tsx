@@ -14,6 +14,7 @@ const pages = ['Acerca', 'Servicios', 'Videos', 'Opiniones', 'Contacto'];
 export default function Home() {
   const [color, setColor] = useState(true);
   const myRef = useRef<HTMLDivElement>(null);
+  const [isClient, setIsClient] = useState(false)
   const isInView = useInView(myRef, { once: false, amount: 0.7});  
   
   useEffect(() => {
@@ -24,6 +25,10 @@ export default function Home() {
     }
   }, [isInView])
 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const sections = [
     <Bio key="bio" />,
     <Activities key="activies" />,
@@ -31,7 +36,7 @@ export default function Home() {
     <Recomendations key='recomendations' />,
     <Contact key="contact" />,
   ];
-  return (
+  return isClient ? (
     <Box
       flexDirection="column"
       justifyContent="center"
@@ -49,5 +54,7 @@ export default function Home() {
         </Box>
       ))}
     </Box>
-  );
+  ) : (
+    'Never prerender'
+  )
 }

@@ -37,7 +37,7 @@ export default function Bio() {
           id="about"
         >
           <Image
-            src="/img/7.jpg"
+            src="/img/7.png"
             alt="Ricardo Ugarte"
             width={350}
             height={300}
