@@ -13,7 +13,7 @@ const pages = ['Acerca', 'Servicios', 'Videos', 'Opiniones', 'Contacto'];
 
 export default function Home() {
   const [color, setColor] = useState(true);
-  const myRef = useRef();
+  const myRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(myRef, { once: false, amount: 0.7});  
   
   useEffect(() => {
