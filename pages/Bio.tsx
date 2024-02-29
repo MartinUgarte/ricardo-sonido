@@ -50,7 +50,7 @@ export default function Bio() {
               align="justify"
               sx={{ maxWidth: "600px", ml: 6 }}
             >
-              Ricardo Ugarte es ingeniero electrónico. Con experencia en lorem
+              Ricardo Ugarte es un ingeniero electrónico. Con experencia en lorem
               ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula
               id dui quis dignissim. Nam lectus magna, ultrices nec leo non,
               ultrices finibus nisl. Cras eu mi sem. Cras in.
