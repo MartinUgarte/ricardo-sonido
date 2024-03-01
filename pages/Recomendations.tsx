@@ -9,7 +9,7 @@ export default function Recomendations() {
     "¡Excelente servicio! ¡Muy buena onda! ¡Muy recomendable!",
   ];
   return (
-    <Box id='recomendations'>
+    <Box id='Recomendaciones'>
       {textos.map((texto, i) => (
         <Recomendation key={i} text={texto} left={i % 2 == 0 ? true : false} />
       ))}

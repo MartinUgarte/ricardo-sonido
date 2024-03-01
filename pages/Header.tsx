@@ -6,6 +6,7 @@ import {
   ThemeProvider,
   Typography,
   createTheme,
+  responsiveFontSizes,
 } from "@mui/material";
 import backgroundPic from "../public/img/5_dark.png";
 import VisibilitySensor from "react-visibility-sensor";
@@ -14,25 +15,20 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Link } from "react-scroll";
 import '@fontsource/bebas-neue';
 
-const theme1 = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: "Bebas Neue",
-    fontSize: 20,
   },
 });
 
-const theme2 = createTheme({
-  typography: {
-    fontFamily: "Bebas Neue",
-    fontSize: 25,
-  },
-});
+theme = responsiveFontSizes(theme);
+
 
 export default function Header() {
   const [visibility, setVisibility] = useState(false);
   return (
     <Box
-      id="home"
+      id="Home"
       sx={{
         backgroundImage: `url(${backgroundPic.src})`,
         backgroundPosition: "center",
@@ -64,16 +60,15 @@ export default function Header() {
               alignItems="center"
               sx={{ mt: 10 }}
             >
-              <ThemeProvider theme={theme2}>
+              <ThemeProvider theme={theme}>
                 <Typography variant="h1" color="white">
                   Ricardo Ugarte
                 </Typography>
-              </ThemeProvider>
-              <ThemeProvider theme={theme1}>
                 <Typography variant="h2" color="#ffc803">
                   Sonido e Iluminación
                 </Typography>
               </ThemeProvider>
+
             </Box>
 
             <Box
@@ -84,7 +79,7 @@ export default function Header() {
               alignItems="flex-end"
             >
               <Link
-                to="about"
+                to="Acerca"
                 spy={true}
                 smooth={true}
                 offset={-100}

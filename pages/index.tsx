@@ -15,7 +15,7 @@ export default function Home() {
   const [color, setColor] = useState(true);
   const myRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false)
-  const isInView = useInView(myRef, { once: false, amount: 0.7});  
+  const isInView = useInView(myRef, { once: false, amount: 0.8});  
   
   useEffect(() => {
     if (isInView) {
@@ -49,12 +49,12 @@ export default function Home() {
       </section>
       
       {sections.map((section, i) => (
-        <Box key={section.key} width="100%">
+        <Box key={section.key} width="100%" sx={{mt: 5}}>
             {section}          
         </Box>
       ))}
     </Box>
   ) : (
-    'Never prerender'
+    'Loading'
   )
 }

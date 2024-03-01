@@ -4,18 +4,20 @@ import {
   ThemeProvider,
   Typography,
   createTheme,
+  responsiveFontSizes,
 } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import '@fontsource/roboto';
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: "Roboto",
-    fontSize: 15,
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default function Bio() {
   const [visibility, setVisibility] = useState(false);
@@ -30,11 +32,11 @@ export default function Bio() {
       <Fade in={visibility} timeout={2000}>
         <Box
           display="flex"
-          flexDirection="row"
-          justifyContent="center"
+          flexDirection={{sm: 'row', xs: 'column'}}
+          justifyContent="space-around"
           alignItems="center"
           height="50vh"
-          id="about"
+          id="Acerca"
         >
           <Image
             src="/img/7.png"
@@ -48,7 +50,7 @@ export default function Bio() {
               variant="h5"
               color="white"
               align="justify"
-              sx={{ maxWidth: "600px", ml: 6 }}
+              sx={{ maxWidth: "600px", ml: {sm: 6, xs: 0}, mx: {sm: 0, xs: 3}, mt: {sm: 0, xs: 3} }}
             >
               Ricardo Ugarte es un ingeniero electrónico. Con experencia en lorem
               ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula
